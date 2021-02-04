@@ -1,0 +1,40 @@
+.printer {
+  display: inline-block;
+  position: relative;
+}
+.printer:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 26px;
+  background-color: #333333;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  animation: flicker 0.8s infinite;
+}
+.printer p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333333;
+  font-family: consolas;
+  overflow: hidden;
+  display: inline-block;
+  animation: leftMove 8s steps(10) infinite;
+}
+@keyframes flicker {
+  0%,75% {
+    opacity: 1;
+  }
+  76%,100% {
+    opacity: 0;
+  }
+}
+@keyframes leftMove {
+  0%,90%,100% {
+    width: 0;
+  }
+  30%,60% {
+    width: 142.95px;
+  }
+}
